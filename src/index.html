@@ -1,14 +1,3 @@
-<!--
-  Hello!
-  -
-  Simplefolio is a clean and responsive portfolio template for Developers!
-  Created by Jacobo Martinez.
-  -
-  Github Repo: https://github.com/cobidev/simplefolio/
-  Readme: https://github.com/cobidev/simplefolio/README.md
-  -
-  For business & inquires, contact me -> jacobojavier98@gmail.com
--->
 <!DOCTYPE html>
 <html lang="fr" class="sr">
   <head>
@@ -46,59 +35,85 @@
     <section id="hero" class="jumbotron">
       <div class="container">
         <h1 class="hero-title load-hidden">
-          Bonjour, je suis <span class="text-color-main">Kevin Thomas</span>
+          Bonjour ! Je m'appelle <span class="text-color-main">Kevin Thomas</span>
           <br />
-          Je suis étudiant en alternance en BTS SIO, je travaille dans la société Genapi en tant que technicien en centre d'appel.
+          Je suis actuellement en deuxième année de BTS SIO spécialité SISR. Je travaille en alternance chez Septeo.
         </h1>
         <p class="hero-cta load-hidden">
           <a rel="noreferrer" class="cta-btn cta-btn--hero" href="#about"
             >À propos de moi</a
           >
         </p>
-      </div>
+        <p class="hero-cta load-hidden">
+          <a rel="noreferrer" class="cta-btn cta-btn--hero" href="assets/E4_tableaudesynthese.xlsx"
+            >Tableau de synthèse</a
+          >
+        </p>
     </section>
     <!-- /END Hero Section -->
 
     <!-- **** About Section **** -->
-    <section id="about">
-      <div class="container">
-        <h2 class="section-title load-hidden">À propos de moi</h2>
-        <div class="row about-wrapper">
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__image load-hidden">
-              <img
-                alt="Profile Image"
-                class="img-fluid rounded shadow-lg"
-                height="auto"
-                width="300px"
-                src="assets/moi.jpg"
-                alt="Profile Image"
-              />
-            </div>
+<section id="about">
+  <div class="container">
+    <h2 class="section-title load-hidden">À propos de moi</h2>
+    <div class="row about-wrapper">
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__image load-hidden">
+          <img
+            alt="Image de profil"
+            class="img-fluid rounded shadow-lg"
+            height="auto"
+            width="300px"
+            src="assets/moi.jpg"
+            alt="Image de profil"
+          />
+        </div>
+      </div>
+      <div class="col-md-6 col-sm-12">
+        <div class="about-wrapper__info load-hidden">
+          <p class="about-wrapper__info-text">
+            Je m'appelle Kevin Thomas, j'ai 29 ans et je suis actuellement en deuxième année de BTS SIO spécialité SISR (Services Informatiques aux Organisations spécialité en Solutions d'Infrastructure, Systèmes et Réseaux). Depuis mes jeunes années, j'ai toujours été passionné par l'informatique et les nouvelles technologies.
+          </p>
+          <p class="about-wrapper__info-text">
+            Pour moi, la reconversion professionnelle dans l'informatique était un choix évident. J'ai toujours aimé travailler avec les clients et l'informatique, et j'ai voulu en savoir plus sur le sujet afin de revenir aux fondamentaux de ce que j'aime.
+          </p>
+          <div class="d-flex mt-3">
+            <button class="cta-btn cta-btn--resume" onclick="togglePdf()">Voir mon CV</button>
           </div>
-          <div class="col-md-6 col-sm-12">
-            <div class="about-wrapper__info load-hidden">
-              <p class="about-wrapper__info-text">
-                Je m’appelle Kevin Thomas, je suis âgé de 28 ans. Je suis  en deuxième année de BTS « SIO spécialité SISR » Services Informatiques aux Organisations spécialité en Solutions d'Infrastructure, Systèmes et Réseaux. Depuis mes jeunes années, j’ai toujours été attiré par l’informatique et les nouvelles technologies.
-              </p>
-              <p class="about-wrapper__info-text">
-                C'était un choix logique pour moi de faire cette reconversion, car aimant la relation client et l'informatique j'ai voulu en connaître davantage à ce sujet afin de revenir à la source de ce que j'aime.
-              </p>
-              <span class="d-flex mt-3">
+          <div id="pdf-container" style="display: none">
+            <object data="assets/resume.pdf" type="application/pdf" width="100%" height="600px">
+              <p>Votre navigateur ne prend pas en charge les fichiers PDF.</p>
+            </object>
                 <a
                   rel="noreferrer"
                   target="_blank"
                   class="cta-btn cta-btn--resume"
                   href="assets/resume.pdf"
                 >
-                  Mon CV
+                  Télécharger
                 </a>
-              </span>
-            </div>
+            <button class="cta-btn cta-btn--resume" onclick="togglePdf()">Fermer</button>
           </div>
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
+
+<script>
+function togglePdf() {
+  var pdfContainer = document.getElementById("pdf-container");
+  var button = document.querySelector(".cta-btn--resume");
+  if (pdfContainer.style.display === "none") {
+    pdfContainer.style.display = "block";
+    button.textContent = "Fermer";
+  } else {
+    pdfContainer.style.display = "none";
+    button.textContent = "Voir mon CV";
+  }
+}
+</script>
+
     <!-- /END About Section -->
 
     <!-- **** Projects Section **** -->
@@ -164,27 +179,22 @@
                 </a>
               </div>
               <p>
-                Genapi a su s'imposer dans le notariat grâce 
+                Site officiel 
               </p>
-              <p2>
-                à son logiciel iNot qui a rendu la rédaction d'actes beaucoup plus rapide.
-              </p2>
-              
             </div>
           </div>
           <!-- /END Project -->
 
           <!-- Notice: each .row is a project -->
-          <h2 class="section-title dark-blue-text">Mon projet professionnel</h2>
+          <h2 class="section-title dark-blue-text">Mes projets professionnels</h2>
             <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
-                <h3 class="project-wrapper__text-title">Mise en place d'un serveur de production</h3>
-                <h4>EN COURS DE CONCEPTION</h4>
+                <h3 class="project-wrapper__text-title">Mise en place d'un serveur Active Directory / DNS / DHCP / Partage de fichiers</h3>
+                <h4>EN COURS DE REDACTION</h4>
                 <div>
                   <p class="mb-4">
-                    La mission donné recemment par ma société est de réaliser un serveur de production pour une étude de notariat
-                    Pour le moment le projet n'est pas concret mais je vais m'appuyer de la documentation présente ci-joint.
+                    Je me suis vu confier la mission de mettre en place un serveur AD avec les services DNS et DHCP, ainsi que la création de GPO. En plus de cela, j'ai créé un service de partage de fichiers pour permettre aux utilisateurs de partager des fichiers. Ce projet a permis de mettre en évidence mes compétences en matière de gestion de réseau et de services informatiques.
                   </p>
                 </div>
                 <!--
@@ -209,7 +219,7 @@
             </div>
             <div class="col-lg-8 col-sm-12">
               <div class="project-wrapper__image load-hidden">
-                <a rel="noreferrer" href="assets/Serveur_Production.pdf" target="_blank">
+                <a rel="noreferrer" href="assets/ADDS.pdf" target="_blank">
                   <div
                     data-tilt
                     data-tilt-max="4"
@@ -220,7 +230,7 @@
                     <img
                       alt="Project Image"
                       class="img-fluid"
-                      src="assets/Prerequis.jpg"
+                      src="assets/windowss.jpg"
                     />
                   </div>
                 </a>
@@ -228,9 +238,112 @@
             </div>
           </div>
           <!-- /END Project -->
-
           <!-- Notice: each .row is a project -->
+            <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Mise en place d'un routeur Zeroshell avec une DMZ géré par 2 Pare-feu PfSense en redondance</h3>
+                <h4>EN COURS DE REDACTION</h4>
+                <div>
+                  <p class="mb-4">
+                    Je me suis vu confier la mission de mettre en place un serveur AD avec les services DNS et DHCP, ainsi que la création de GPO. En plus de cela, j'ai créé un service de partage de fichiers pour permettre aux utilisateurs de partager des fichiers. Ce projet a permis de mettre en évidence mes compétences en matière de gestion de réseau et de services informatiques.
+                  </p>
+                </div>
+                <!--
+                  <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              -->
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="assets/PfSense.pdf" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/pfsens.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->          
+         <!-- Notice: each .row is a project -->
           <h2 class="section-title dark-blue-text">Mes projets personnels</h2>
+            <div class="row">
+            <div class="col-lg-4 col-sm-12">
+              <div class="project-wrapper__text load-hidden">
+                <h3 class="project-wrapper__text-title">Hebergement du portfolio sur une infrastructure personnelle via une Livebox</h3>
+                <h4>EN COURS DE REDACTION</h4>
+                <div>
+                  <p class="mb-4">
+                    Voici le paramétrage à effectuer sur son routeur livebox pour permettre l'accessibilité de son site internet au Web
+                  </p>
+                </div>
+                <!--
+                  <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn cta-btn--hero"
+                  href="#!"
+                >
+                  See Live
+                </a>
+                <a
+                  rel="noreferrer"
+                  target="_blank"
+                  class="cta-btn text-color-main"
+                  href="#!"
+                >
+                  Source Code
+                </a>
+              -->
+              </div>
+            </div>
+            <div class="col-lg-8 col-sm-12">
+              <div class="project-wrapper__image load-hidden">
+                <a rel="noreferrer" href="assets/heberger.pdf" target="_blank">
+                  <div
+                    data-tilt
+                    data-tilt-max="4"
+                    data-tilt-glare="true"
+                    data-tilt-max-glare="0.5"
+                    class="thumbnail rounded js-tilt"
+                  >
+                    <img
+                      alt="Project Image"
+                      class="img-fluid"
+                      src="assets/liveb.jpg"
+                    />
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+          <!-- /END Project -->
+          <!-- Notice: each .row is a project -->
             <div class="row">
             <div class="col-lg-4 col-sm-12">
               <div class="project-wrapper__text load-hidden">
@@ -378,38 +491,6 @@
         </div>
 
         <hr />
-
-        <!-- Notice: if you want to give me some credit, it will be huge for me! if not, put your data on it -->
-        <p class="footer__text">
-          © 2021 - Template developed by
-          <a rel="noreferrer" href="https://github.com/cobidev" target="_blank"
-            >Jacobo Martínez</a
-          >
-        </p>
-
-        <!-- TO DO: remove this entire paragraph once you finish your portfolio -->
-        <p class="mt-3 pt-3">
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobidev/simplefolio/fork"
-            data-icon="octicon-repo-forked"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Fork ntkme/github-buttons on GitHub"
-            >Fork</a
-          >
-          <a
-            rel="noreferrer"
-            class="github-button"
-            href="https://github.com/cobidev/simplefolio"
-            data-icon="octicon-star"
-            data-size="large"
-            data-show-count="true"
-            aria-label="Star cobidev/simplefolio on GitHub"
-            >Star</a
-          >
-        </p>
       </div>
     </footer>
     <!-- /END Footer Section -->
